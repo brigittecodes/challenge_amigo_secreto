@@ -1,0 +1,23 @@
+const inputAmigo = document.getElementById('amigo');
+const listaAmigos = document.getElementById('listaAmigos');
+const botonAgregar = document.getElementById('boton-agregar');
+
+let amigos = []; // Arreglo para almacenar los nombres de los amigos
+
+botonAgregar.addEventListener('click', () => {
+  const nombre = inputAmigo.value.trim();
+
+  if (nombre === '') {
+    alert('Por favor, ingrese un nombre.');
+  } else {
+    amigos.push(nombre);
+
+    // Crear un elemento de lista para el nuevo amigo
+    const li = document.createElement('li');
+    li.textContent = nombre;
+    listaAmigos.appendChild(li);
+
+    // Limpiar el campo de entrada
+    inputAmigo.value = '';
+  }
+});
